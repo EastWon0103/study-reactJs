@@ -38,14 +38,24 @@ Food.propTypes = {
   rating: PropTypes.number
 }
 
-function App() {
+class App extends React.Component{
+  state = {
+    count:0
+  };
+  add = () =>{
+    console.log("add");
+  };
+  minus = () =>{
+    console.log("minus");
+  };
+  render(){
   return (
-  <div>
-    {foodILike.map(dish => (
-      <Food key={dish.id} name={dish.name} image={dish.image} rating={dish.rating} />
-    ))}
-  </div>
-  );
+    <div>
+      <h1>The number is {this.state.count}</h1>
+      <button onClick={this.add}>Add</button>
+      <button onClick={this.minus}>Minus</button>
+    </div>)
+  }
 }
 
 export default App;
